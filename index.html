@@ -874,6 +874,32 @@
 .header-tagline{max-width:36rem;margin:0 auto 24px;padding:0 14px;font-size:clamp(1rem,3vw,1.2rem);font-weight:600;letter-spacing:.01em}
 @keyframes adhya-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 @media(prefers-reduced-motion:reduce){.header h1{animation:none}}
+/* Forest green and muted champagne gold palette, inspired by the Adhya logo */
+:root{--primary:#28523a!important;--primary-light:#3d6b4c!important;--primary-dark:#183d2b!important;--gold:#b99a55!important;--gold-light:#d2bb78!important}
+body{background:linear-gradient(180deg,#f3efe4 0%,#ebe5d5 45%,#e8e0cd 100%)!important}
+.header{background:linear-gradient(135deg,#0d2118 0%,#173626 58%,#23472f 100%)!important}
+.header::after{background:linear-gradient(90deg,transparent,#c7aa61,transparent)!important}
+.header h1{animation:adhya-float 4s ease-in-out infinite;will-change:transform}
+.header-tagline{max-width:36rem;margin:0 auto 24px;padding:0 14px;font-size:clamp(1rem,3vw,1.2rem);font-weight:600;letter-spacing:.01em}
+.brand-logo{display:block;width:clamp(100px,20vw,142px);height:auto;aspect-ratio:1;object-fit:cover;margin:0 auto 14px;border:2px solid #b99a55;border-radius:18px;box-shadow:0 8px 24px rgba(0,0,0,.28)}
+.category-nav{background:rgba(244,240,229,.97)!important}
+.nav-btn{background:linear-gradient(145deg,#f4f0e5,#e8e0cc)!important;border-color:#cdbb87!important;color:#263b2b!important}
+.nav-btn:hover,.nav-btn.active{background:linear-gradient(135deg,#28523a,#3d6b4c)!important;border-color:#28523a!important;color:#fff!important;box-shadow:0 4px 10px rgba(24,61,43,.18)!important}
+.menu-card{background:linear-gradient(145deg,#f8f5ed,#ece6d8)!important;border-color:#d9cfb7!important}
+.special-card{background:linear-gradient(145deg,#e9dfc7,#f3eddf)!important;border-color:#cdbb87!important}
+.price-option{background:linear-gradient(145deg,#e9e2d2,#f4f0e5)!important}
+.cart-float{background:linear-gradient(110deg,#f5f1e5,#e8dfcb)!important;border-color:#d5c89f!important}
+.cart-content{background:linear-gradient(180deg,#f7f3e8,#ebe2ce)!important}
+.customer-form{background:#e9e1cf!important}
+.customer-form input,.customer-form textarea{background:#f7f4eb!important;border-color:#d2c49f!important}
+.holiday-banner{background:linear-gradient(100deg,#183d2b,#28523a,#183d2b)!important;border-color:#c7aa61!important;color:#f4e7c2!important;box-shadow:0 6px 18px rgba(24,61,43,.2)!important}
+.category-icon{background:linear-gradient(135deg,#28523a,#3d6b4c)!important;box-shadow:0 8px 20px rgba(24,61,43,.18)!important}
+.cart-count{background:#28523a!important}
+.view-cart-btn{background:linear-gradient(135deg,#28523a,#3d6b4c)!important;box-shadow:0 4px 12px rgba(24,61,43,.2)!important}
+.view-cart-btn:hover{background:linear-gradient(135deg,#183d2b,#28523a)!important}
+.non-veg-tag{background:#eadfd1!important;color:#76563b!important}
+@keyframes adhya-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@media(prefers-reduced-motion:reduce){.header h1{animation:none}}
 </style>
 </head>
 <body>
@@ -892,7 +918,7 @@
                 </svg>
                 Premium Quality
             </div>
-            <h1><span class="brand-name">Adhya</span> <span class="brand-type">Food Court</span></h1>
+            <img class="brand-logo" src="adhya-logo.jpg" alt="Adhya Food Truck logo"><h1><span class="brand-name">Adhya</span> <span class="brand-type">Food Court</span></h1>
             <p class="header-tagline">Welcome to Adhya — where every meal feels like home.</p>
             <div class="info-bar">
                 <div class="info-pill">
