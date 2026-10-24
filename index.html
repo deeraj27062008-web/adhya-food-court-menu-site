@@ -869,6 +869,11 @@
 .view-cart-btn{background:linear-gradient(135deg,#286b5a,#3f8971)!important;box-shadow:0 4px 12px rgba(40,107,90,.2)!important}
 .view-cart-btn:hover{background:linear-gradient(135deg,#1d5146,#286b5a)!important}
 .non-veg-tag{background:#f4dfcf!important;color:#855438!important}
+/* A warm welcome with a gentle floating brand animation */
+.header h1{animation:adhya-float 4s ease-in-out infinite;will-change:transform}
+.header-tagline{max-width:36rem;margin:0 auto 24px;padding:0 14px;font-size:clamp(1rem,3vw,1.2rem);font-weight:600;letter-spacing:.01em}
+@keyframes adhya-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@media(prefers-reduced-motion:reduce){.header h1{animation:none}}
 </style>
 </head>
 <body>
@@ -888,7 +893,7 @@
                 Premium Quality
             </div>
             <h1><span class="brand-name">Adhya</span> <span class="brand-type">Food Court</span></h1>
-            <p class="header-tagline">Good Food. Great Mood. Always Adhya.</p>
+            <p class="header-tagline">Welcome to Adhya — where every meal feels like home.</p>
             <div class="info-bar">
                 <div class="info-pill">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
