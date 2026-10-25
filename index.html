@@ -1096,9 +1096,17 @@ body{background:linear-gradient(180deg,#f3efe4 0%,#ebe5d5 45%,#e8e0cd 100%)!impo
                     ${cat.key === 'kabab' ? `
                         <img class="category-feature-image" src="images/special-kabab.png" alt="Grilled kabab platter served with onion and lemon" loading="lazy">
                     ` : ''}
+                    ${cat.key === 'noodles' ? `
+                        <img class="category-feature-image" src="images/noodles.png" alt="Fresh hot noodles with vegetables and chicken" loading="lazy">
+                    ` : ''}
+                    ${cat.key === 'rice' ? `
+                        <img class="category-feature-image" src="images/rice.png" alt="Fresh hot fried rice with vegetables and chicken" loading="lazy">
+                    ` : ''}
                     <div class="menu-grid">
                         ${cat.items.map(item => `
                             <div class="menu-card ${cat.special || item.special ? 'special-card' : ''}">
+                                ${item.name === 'Gobi Manchurian' ? '<img class="dish-card-image" src="images/gobi-manchurian.png" alt="Hot Gobi Manchurian served fresh" loading="lazy">' : ''}
+                                ${item.name === 'Dry Gobi' ? '<img class="dish-card-image" src="images/dry-gobi.png" alt="Hot crispy Dry Gobi served fresh" loading="lazy">' : ''}
                                 ${item.special ? '<img class="dish-card-image" src="images/fried-piece-biryani.png" alt="Freshly served Fried Piece Biryani with golden rice and chicken" loading="lazy">' : ''}
                                 <div class="card-top">
                                     <div class="card-title">${item.name}${item.special ? '<span class="special-label">HOUSE SPECIAL</span>' : ''}</div>
