@@ -899,7 +899,7 @@ body{background:linear-gradient(180deg,#f3efe4 0%,#ebe5d5 45%,#e8e0cd 100%)!impo
 .view-cart-btn:hover{background:linear-gradient(135deg,#183d2b,#28523a)!important}
 .non-veg-tag{background:#eadfd1!important;color:#76563b!important}
 @keyframes adhya-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-@media(prefers-reduced-motion:reduce){.header h1{animation:none}}
+@media(prefers-reduced-motion:reduce){.header h1{animation:none}}.special-card:has(.special-label){background:linear-gradient(145deg,#fff2c6,#e4c66e)!important;border:2px solid #b99a55!important;box-shadow:0 12px 28px rgba(89,68,26,.24),0 0 0 4px rgba(185,154,85,.16)!important;transform:translateY(-2px)}.special-card:has(.special-label)::before{background:linear-gradient(90deg,#8f7132,#e2c66f,#8f7132)!important;height:6px!important}.special-label{display:inline-block;margin-left:8px;padding:4px 8px;border-radius:999px;background:#28523a;color:#fff;font-size:.62rem;font-weight:800;letter-spacing:.08em;vertical-align:middle;white-space:nowrap}@media(prefers-reduced-motion:no-preference){.special-card:has(.special-label){animation:special-glow 3s ease-in-out infinite alternate}}@keyframes special-glow{from{box-shadow:0 10px 22px rgba(89,68,26,.18),0 0 0 3px rgba(185,154,85,.12)}to{box-shadow:0 14px 32px rgba(89,68,26,.3),0 0 0 5px rgba(185,154,85,.22)}}
 </style>
 </head>
 <body>
@@ -1009,9 +1009,9 @@ body{background:linear-gradient(180deg,#f3efe4 0%,#ebe5d5 45%,#e8e0cd 100%)!impo
                     { name: 'Egg Gobi', type: 'non-veg', prices: { full: 90, half: 60 } },
                     { name: 'Gobi Chilly', type: 'veg', prices: { full: 90, half: 60 } },
                     { name: 'Gobi 65', type: 'veg', prices: { full: 90, half: 60 } },
-                    { name: 'Chilly Chicken', type: 'non-veg', prices: { full: 130, half: 80 } },
-                    { name: 'Pepper Chicken', type: 'non-veg', prices: { full: 140, half: 90 } },
-                    { name: 'Chicken 65', type: 'non-veg', prices: { full: 140, half: 80 } }
+                    
+                    
+                    
                 ]
             },
             {
@@ -1020,7 +1020,7 @@ body{background:linear-gradient(180deg,#f3efe4 0%,#ebe5d5 45%,#e8e0cd 100%)!impo
                 items: [
                     { name: 'Veg Noodles', type: 'veg', prices: { full: 70, half: 40 } },
                     { name: 'Gobi Noodles', type: 'veg', prices: { full: 80, half: 50 } },
-                    { name: 'Mushroom Noodles', type: 'veg', prices: { full: 100, half: 70 } },
+                    
                     { name: 'Panner Noodles', type: 'veg', prices: { full: 110, half: 80 } },
                     { name: 'Chicken Noodles', type: 'non-veg', prices: { full: 100, half: 70 } },
                     { name: 'Egg Noodles', type: 'non-veg', prices: { full: 80, half: 60 } },
@@ -1032,7 +1032,7 @@ body{background:linear-gradient(180deg,#f3efe4 0%,#ebe5d5 45%,#e8e0cd 100%)!impo
                 key: 'rice',
                 items: [
                     { name: 'Jeera Rice', type: 'veg', prices: { full: 70, half: 50 } },
-                    { name: 'Mushroom Fried Rice', type: 'veg', prices: { full: 100, half: 70 } },
+                    
                     { name: 'Panner Fried Rice', type: 'veg', prices: { full: 110, half: 80 } },
                     { name: 'Gobi Fried Rice', type: 'veg', prices: { full: 80, half: 60 } },
                     { name: 'Egg Fried Rice', type: 'non-veg', prices: { full: 80, half: 60 } },
@@ -1044,7 +1044,8 @@ body{background:linear-gradient(180deg,#f3efe4 0%,#ebe5d5 45%,#e8e0cd 100%)!impo
                 key: 'biryani',
                 items: [
                     { name: 'Kushka', type: 'veg', prices: { full: 70 } },
-                    { name: 'Hyd Chicken Dum Biryani', type: 'non-veg', prices: { full: 130, half: 90 } }
+                    { name: 'Hyd Chicken Dum Biryani', type: 'non-veg', prices: { full: 130, half: 90 } },
+                    { name: 'Fried Piece Biryani', type: 'non-veg', prices: { full: 140 }, special: true }
                 ]
             },
             {
@@ -1092,9 +1093,9 @@ body{background:linear-gradient(180deg,#f3efe4 0%,#ebe5d5 45%,#e8e0cd 100%)!impo
                     </div>
                     <div class="menu-grid">
                         ${cat.items.map(item => `
-                            <div class="menu-card ${cat.special ? 'special-card' : ''}">
+                            <div class="menu-card ${cat.special || item.special ? 'special-card' : ''}">
                                 <div class="card-top">
-                                    <div class="card-title">${item.name}</div>
+                                    <div class="card-title">${item.name}${item.special ? '<span class="special-label">HOUSE SPECIAL</span>' : ''}</div>
                                     <div class="type-tag ${item.type === 'veg' ? 'veg-tag' : 'non-veg-tag'}">${item.type}</div>
                                 </div>
                                 <div class="price-options">
