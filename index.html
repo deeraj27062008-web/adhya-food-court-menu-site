@@ -900,6 +900,7 @@ body{background:linear-gradient(180deg,#f3efe4 0%,#ebe5d5 45%,#e8e0cd 100%)!impo
 .non-veg-tag{background:#eadfd1!important;color:#76563b!important}
 @keyframes adhya-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 @media(prefers-reduced-motion:reduce){.header h1{animation:none}}.special-card:has(.special-label){background:linear-gradient(145deg,#fff2c6,#e4c66e)!important;border:2px solid #b99a55!important;box-shadow:0 12px 28px rgba(89,68,26,.24),0 0 0 4px rgba(185,154,85,.16)!important;transform:translateY(-2px)}.special-card:has(.special-label)::before{background:linear-gradient(90deg,#8f7132,#e2c66f,#8f7132)!important;height:6px!important}.special-label{display:inline-block;margin-left:8px;padding:4px 8px;border-radius:999px;background:#28523a;color:#fff;font-size:.62rem;font-weight:800;letter-spacing:.08em;vertical-align:middle;white-space:nowrap}@media(prefers-reduced-motion:no-preference){.special-card:has(.special-label){animation:special-glow 3s ease-in-out infinite alternate}}@keyframes special-glow{from{box-shadow:0 10px 22px rgba(89,68,26,.18),0 0 0 3px rgba(185,154,85,.12)}to{box-shadow:0 14px 32px rgba(89,68,26,.3),0 0 0 5px rgba(185,154,85,.22)}}
+        .category-feature-image{display:block;width:100%;aspect-ratio:3.2/1;max-height:220px;object-fit:cover;border:2px solid #cdbb87;border-radius:18px;margin:0 0 18px;box-shadow:0 10px 24px rgba(24,61,43,.18)}
 </style>
 </head>
 <body>
@@ -1091,6 +1092,9 @@ body{background:linear-gradient(180deg,#f3efe4 0%,#ebe5d5 45%,#e8e0cd 100%)!impo
                             <div class="category-subtitle">${cat.items.length} delicious items</div>
                         </div>
                     </div>
+                    ${cat.key === 'kabab' ? `
+                        <img class="category-feature-image" src="images/special-kabab.png" alt="Grilled kabab platter served with onion and lemon" loading="lazy">
+                    ` : ''}
                     <div class="menu-grid">
                         ${cat.items.map(item => `
                             <div class="menu-card ${cat.special || item.special ? 'special-card' : ''}">
